@@ -39,6 +39,16 @@ const server = app.listen(port, () => {
 
 setupSocket(server);
 
+// Fail fast with a clear message when DATABASE_URL is not provided.
+if (!databaseURL) {
+  console.error(
+    "FATAL: `DATABASE_URL` is not set.\n" +
+      "Create a `server/.env` file (copy from `server/.env.example`) and set `DATABASE_URL` to your MongoDB connection string.\n" +
+      "Example (Atlas): mongodb+srv://<USER>:<ENCODED_PASS>@cluster0.xxxxx.mongodb.net/realtime_chat_app?retryWrites=true&w=majority"
+  );
+  process.exit(1);
+}
+
 mongoose
   .connect(databaseURL)
   .then(() => {

@@ -1,0 +1,18 @@
+# Node modules
+node_modules/
+
+# Local env files
+# Client env (Vite)
+client/.env
+# Server env
+server/.env
+
+# Build output
+dist/
+build/
+
+# OS files
+.DS_Store
+
+# VSCode
+.vscode/
