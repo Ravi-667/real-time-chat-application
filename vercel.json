@@ -7,9 +7,5 @@
       "config": { "distDir": "dist" }
     }
   ],
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/client/dist/$1" },
-    { "src": "/(.*)", "dest": "/client/dist/index.html" }
-  ]
+  
 }
